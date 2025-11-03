@@ -34,7 +34,9 @@ TRAIN_FLAGS = {
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="whisper-finetune", description=__doc__)
+    parser = argparse.ArgumentParser(
+        prog="whisper-finetune", description="Prepare transcribed audio and fine-tune OpenAI Whisper on it."
+    )
     commands = parser.add_subparsers(dest="command", required=True)
 
     prepare = commands.add_parser("prepare", help="build a JSONL manifest from a transcript table")
